@@ -10,8 +10,8 @@
 		Station:
 		<select name="station">
 			<?php
-				mysql_connect("192.168.144.45","root","");
-				@mysql_select_db("howsmytrain") or die("unable to connect to database");
+                require('include.php');
+                init_db();
 				$result = mysql_query("SELECT * FROM stations");
 				$rows = mysql_numrows($result);
 				mysql_close();

@@ -6,10 +6,8 @@
 <div id="contentMain">
 	<a href="/howsmytrain/"><img src="trainlogo.png"/></a>
 		<?php
-			
-			//Connect to the database and get table data
-			mysql_connect("192.168.144.45","root","");
-			@mysql_select_db("howsmytrain") or die("unable to connect to database");
+            require('include.php');
+			init_db();
 			$sql = 'SELECT * FROM timetables WHERE StopsAt="' . $_GET['station'] . '" AND Day = ' . $_GET['day'] . ' AND StopsWhen >="' . $_GET['timehours'] . ':' . $_GET['timeminutes'] . ':00"' . ' ORDER by StopsWhen limit 5';
 			$result = mysql_query($sql);
 			$rows = mysql_numrows($result);

@@ -18,8 +18,8 @@ $query = "?i=$svcid&s=$stid";
 	</div>
 
 <?php
-mysql_connect("192.168.144.45","root","");
-@mysql_select_db("howsmytrain") or die("unable to connect to database");
+require('include.php');
+init_db();
 
 // HACK HACK HACK
 $svcid = 'NMP-LIV-06:06-08:35-1';
