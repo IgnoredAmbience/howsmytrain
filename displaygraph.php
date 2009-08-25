@@ -63,6 +63,8 @@ while($iter = mysql_fetch_assoc($result)) {
 	$i++;
 }
 
+if (!$i) die("No data available")
+
 $onTime = (int) ((($i - $ppm) * 100) / ($i));
 $dest   = substr($_GET['ServiceID'], 4, 3);
 $time   = substr($_GET['ServiceID'], 14, 5);
